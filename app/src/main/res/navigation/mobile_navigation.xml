@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_about_us">
+
+    <fragment
+        android:id="@+id/navigation_collection"
+        android:name="com.example.artinstitutechicago.ui.collection.CollectionFragment"
+        android:label="collection"
+        tools:layout="@layout/fragment_collection">
+        <action
+            android:id="@+id/action_navigation_collection_to_navigation_details_collection"
+            app:destination="@id/navigation_details_collection" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_details_collection"
+        android:name="com.example.artinstitutechicago.ui.collection.details.CollectionDetailsFragment"
+        android:label="collection"
+        tools:layout="@layout/fragment_details_collection">
+
+    <argument
+        android:name="artworkId"
+        app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_about_us"
+        android:name="com.example.artinstitutechicago.ui.aboutUs.AboutUsFragment"
+        android:label="about us"
+        tools:layout="@layout/fragment_about_us" />
+
+    <fragment
+        android:id="@+id/navigation_my_office"
+        android:name="com.example.artinstitutechicago.ui.myOffice.MyOfficeFragment"
+        android:label="my office"
+        tools:layout="@layout/fragment_my_office" />
+</navigation>
