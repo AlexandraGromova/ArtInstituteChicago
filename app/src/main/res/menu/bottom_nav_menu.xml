@@ -11,9 +11,5 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="About Us" />
 
-    <item
-        android:id="@+id/navigation_my_office"
-        android:icon="@drawable/ic_baseline_face_24"
-        android:title="My Office" />
 
 </menu>

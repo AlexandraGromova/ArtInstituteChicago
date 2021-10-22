@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide
 import com.example.artinstitutechicago.R
 import com.example.artinstitutechicago.data.model.Artwork
 
-private const val TAG: String = "adapter"
 
 class CollectionAdapter(private val artworks: ArrayList<Artwork>) :
     RecyclerView.Adapter<CollectionAdapter.ViewHolder>() {
@@ -31,18 +30,16 @@ class CollectionAdapter(private val artworks: ArrayList<Artwork>) :
 
                 titleTextView.text = artwork.title
                 artistTextView.text = artwork.artist_title
-                var artworkImageId  = artwork.image_id
+                var artworkImageId = artwork.image_id
 
                 Glide
                     .with(this)
                     .load("https://www.artic.edu/iiif/2/${artworkImageId}/full/843,/0/default.jpg")
                     .into(imageArtView)
 
-                container.setOnClickListener{
+                container.setOnClickListener {
                     artworkClickListener?.onClick(artwork.id)
                 }
-
-                Log.v(TAG, "bind ")
             }
         }
     }
@@ -50,13 +47,11 @@ class CollectionAdapter(private val artworks: ArrayList<Artwork>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.artwork_item, parent, false)
-        Log.v(TAG, "onCreateViewHolder")
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(artworks[position])
-        Log.v(TAG, "${artworks[position]}")
     }
 
     override fun getItemCount(): Int = artworks.size
@@ -66,10 +61,10 @@ class CollectionAdapter(private val artworks: ArrayList<Artwork>) :
         this.artworks.apply {
             clear()
             addAll(artworks)
-            Log.v(TAG, "$this")
         }
         notifyDataSetChanged()
     }
+
     fun interface ArtworkClickListener {
         fun onClick(id: String)
     }

@@ -17,9 +17,10 @@
 
     <TextView
         android:id="@+id/text_about_institute"
-        android:layout_width="360dp"
-        android:layout_height="379dp"
-        android:text="text about the institute"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:textSize="15dp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

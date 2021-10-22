@@ -8,8 +8,17 @@ class FirebaseConfig {
     fun provideConfig() {
         val remoteConfig = Firebase.remoteConfig
         val configSettings = remoteConfigSettings {
-            minimumFetchIntervalInSeconds = 1000
+            minimumFetchIntervalInSeconds = 1
         }
         remoteConfig.setConfigSettingsAsync(configSettings)
+    }
+    fun activateConfig(){
+        Firebase.remoteConfig.fetchAndActivate()
+            .addOnCompleteListener() { task ->
+                if (task.isSuccessful) {
+                    val updated = task.result
+                } else {
+                }
+            }
     }
 }

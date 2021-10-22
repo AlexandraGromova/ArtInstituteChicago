@@ -31,9 +31,4 @@
         android:label="about us"
         tools:layout="@layout/fragment_about_us" />
 
-    <fragment
-        android:id="@+id/navigation_my_office"
-        android:name="com.example.artinstitutechicago.ui.myOffice.MyOfficeFragment"
-        android:label="my office"
-        tools:layout="@layout/fragment_my_office" />
 </navigation>
